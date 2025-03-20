@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented Programming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .content {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        pre {
+            background-color: #f4f4f9;
+            padding: 10px;
+            border-left: 3px solid #ddd;
+            overflow-x: auto;
+        }
+
+        ul {
+            margin: 20px 0;
+        }
+
+        a {
+            color: #0073e6;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Object Oriented Programming</h1>
+        <ul>
+            <li>Prepared by:</li>
+            1: Jadav Adarsh(B025)<br>
+            2: vinit soni(B90)<br>
+            3: Chosaliya Dhruv(B14)<br>
+        </ul>
+        <h2>Introduction</h2>
+        <p>Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which can
+            contain data and code: data in the form of fields, often known as attributes or properties, and code in the
+            form of procedures, often known as methods. OOP languages are diverse, but the most popular ones are
+            class-based, meaning that objects are instances of classes, which typically also determine their type.</p>
+        <img src="diagram.jpg" alt="OOP Diagram">
+        <h2>Key Topics & Examples</h2>
+        <h3>1) Classes & Objects</h3>
+        <p>Classes are blueprints for creating objects. Objects are instances of classes.</p>
+        <pre><code>class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+dog = Dog("Buddy", 3)
+print(dog.name)</code></pre>
+        <h3>2) Encapsulation</h3>
+        <p>Encapsulation involves wrapping the data and code acting on the data together as a single unit. The data is
+            hidden and can only be accessed through public methods.</p>
+        <pre><code>class Car:
+    def __init__(self, brand, model):
+        self.__brand = brand
+        self.__model = model
+
+    def get_car_info(self):
+        return f"{self.__brand} {self.__model}"
+
+car = Car("Toyota", "Corolla")
+print(car.get_car_info())</code></pre>
+        <h3>3) Inheritance</h3>
+        <p>Inheritance allows a new class to inherit the characteristics of an existing class.</p>
+        <pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound"
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks"
+
+dog = Dog("Buddy")
+print(dog.speak())</code></pre>
+        <h3>4) Polymorphism</h3>
+        <p>Polymorphism allows objects of different classes to be treated as objects of a common super class. The
+            methods used depend on the object’s actual type.</p>
+        <pre><code>class Shape:
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+circle = Circle(5)
+rectangle = Rectangle(4, 5)
+print(circle.area())
+print(rectangle.area())</code></pre>
+        <h3>5) Abstraction</h3>
+        <p>Abstraction hides the complex implementation details and shows only the essential features of an object.</p>
+        <pre><code>from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+
+class Car(Vehicle):
+    def move(self):
+        return "Car is moving"
+
+car = Car()
+print(car.move())</code></pre>
+        <h2>Summary of OOP Concepts</h2>
+        <ul>
+            <li><b>Encapsulation:</b> Restricting access to some of an object’s components.</li>
+            <li><b>Inheritance:</b> A class can inherit attributes and methods from another class.</li>
+            <li><b>Polymorphism:</b> Different classes can be treated as instances of the same class through
+                inheritance.</li>
+            <li><b>Abstraction:</b> Hiding complex implementation while providing only the necessary functionalities.
+            </li>
+        </ul>
+        <h2>Technical & Theoretical Reading Materials</h2>
+        <ul>
+            <li><a href="https://realpython.com/python3-object-oriented-programming/">Python OOP - Real Python</a></li>
+            <li><a href="https://www.javatpoint.com/python-oops-concepts">Python OOP Concepts - Javatpoint</a></li>
+        </ul>
+        <h2>Video Resources</h2>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=JeznW_7DlB0">Introduction to Object-Oriented Programming
+                    (OOP)</a></li>
+        </ul>
+        <h2>Conclusion</h2>
+        <p>OOP provides a structured approach to programming by modeling real-world entities as objects. By using
+            encapsulation, inheritance, polymorphism, and abstraction, OOP improves code maintainability, reusability,
+            and scalability.</p>
+    </div>
+</body>
+
+</html>
